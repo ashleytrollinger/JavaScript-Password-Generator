@@ -10,3 +10,4 @@ function, which takes the newly filled array and shuffles it once more, creating
 ## Screenshot
 
 ## Link
+https://ashleytrollinger.github.io/JavaScript-Password-Generator/
