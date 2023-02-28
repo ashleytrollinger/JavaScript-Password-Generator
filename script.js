@@ -13,6 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//Arrays that contain all the possible characters that can be used in the  generated password
 const lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "?"];
@@ -27,23 +28,36 @@ function generatePassword() {
   var lowerCase = confirm("Do you want to add lowerercase letters to your password?");
   var spChar = confirm("Do you want to add special characters to your password?");
   var number = confirm("Do you want to add numbers to your password?");
-
-  var tempPass = "";
+//Creates an empty array for the password to be placed into
+  const tempPass = [];
+  // While loop so that it passes through at least once and all criteria is met and then will loop through until desired length is reached
   while (tempPass.length < passwordLength) {
     if (tempPass.length < passwordLength && upperCase == true) {
-      tempPass += uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
+      tempPass.push(uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)]);
     }
     if (tempPass.length < passwordLength && lowerCase == true) {
-      tempPass += lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
+      tempPass.push(lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)]);
     }
     if (tempPass.length < passwordLength && spChar == true) {
-      tempPass += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+      tempPass.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
     }
     if (tempPass.length < passwordLength && number == true) {
-      tempPass += numbers[Math.floor(Math.random() * numbers.length)];
+      tempPass.push(numbers[Math.floor(Math.random() * numbers.length)]);
     }
   }
-  return tempPass;
+  // Nested function to shuffle the patterned array created above to make an even further secure password
+  function shuffleArray(array) {
+    let len = array.length,
+      currentIndex;
+    for (currentIndex = len - 1; currentIndex > 0; currentIndex--) {
+      let randIndex = Math.floor(Math.random() * (currentIndex + 1));
+      var temp = array[currentIndex];
+      array[currentIndex] = array[randIndex];
+      array[randIndex] = temp;
+    }
+  }
+  shuffleArray(tempPass);
+  return shuffleArray(tempPass);
 
 
 }
