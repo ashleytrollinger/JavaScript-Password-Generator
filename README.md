@@ -8,6 +8,8 @@ up the the desired length with the desired letters, numbers and characters it wi
 function, which takes the newly filled array and shuffles it once more, creating a secure and random password for the user.
 
 ## Screenshot
+<img width="1440" alt="Screen Shot 2023-02-28 at 5 58 08 PM" src="https://user-images.githubusercontent.com/123582742/221999866-de670543-ff80-4bc7-8c7c-1ecea874e284.png">
+
 
 ## Technologies Used
 Html, CSS, JavaScript
