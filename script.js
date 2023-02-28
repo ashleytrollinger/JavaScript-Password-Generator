@@ -29,16 +29,18 @@ function generatePassword() {
   var number = confirm("Do you want to add numbers to your password?");
 
   var tempPass = "";
-  for (let index = 0; index < passwordLength; index++) {
-    if (upperCase == true) {
+  while (tempPass.length < passwordLength) {
+    if (tempPass.length < passwordLength && upperCase == true) {
       tempPass += uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-
     }
-    if (lowerCase == true) {
+    if (tempPass.length < passwordLength && lowerCase == true) {
       tempPass += lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
     }
-    if (spChar == true) {
+    if (tempPass.length < passwordLength && spChar == true) {
       tempPass += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    }
+    if (tempPass.length < passwordLength && number == true) {
+      tempPass += numbers[Math.floor(Math.random() * numbers.length)];
     }
   }
   return tempPass;
