@@ -28,7 +28,7 @@ function generatePassword() {
   var lowerCase = confirm("Do you want to add lowerercase letters to your password?");
   var spChar = confirm("Do you want to add special characters to your password?");
   var number = confirm("Do you want to add numbers to your password?");
-//Creates an empty array for the password to be placed into
+  //Creates an empty array for the password to be placed into
   const tempPass = [];
   // While loop so that it passes through at least once and all criteria is met and then will loop through until desired length is reached
   while (tempPass.length < passwordLength) {
@@ -56,8 +56,16 @@ function generatePassword() {
       array[randIndex] = temp;
     }
   }
+  /*I wanted to leave this in because it was a very useful tool when trying to get the shuffleArray function to properly work and I want to show that I am knowledgable on console.log
+  console.log("Array before shuffling", tempPass);
   shuffleArray(tempPass);
-  return shuffleArray(tempPass);
+  console.log("Array after shuffling", tempPass);
+  */
+ 
+  //This calls the shuffleArray function on the patterned tempPass that was created in the while loop
+  shuffleArray(tempPass);
+
+  return (tempPass);
 
 
 }
