@@ -61,11 +61,13 @@ function generatePassword() {
   shuffleArray(tempPass);
   console.log("Array after shuffling", tempPass);
   */
- 
+
   //This calls the shuffleArray function on the patterned tempPass that was created in the while loop
   shuffleArray(tempPass);
-
-  return (tempPass);
+  //This takes the commas out of the array and presents the password in its final form
+  let finalPass = tempPass.join("");
+  //Finally this returns the shuffled password
+  return (finalPass);
 
 
 }
