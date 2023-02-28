@@ -9,5 +9,8 @@ function, which takes the newly filled array and shuffles it once more, creating
 
 ## Screenshot
 
+## Technologies Used
+Html, CSS, JavaScript
+
 ## Link
 https://ashleytrollinger.github.io/JavaScript-Password-Generator/
