@@ -66,8 +66,12 @@ function generatePassword() {
   shuffleArray(tempPass);
   //This takes the commas out of the array and presents the password in its final form
   let finalPass = tempPass.join("");
-  //Finally this returns the shuffled password
-  return (finalPass);
 
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a number between 8 and 128.");
+  } else {
+    //Finally this returns the shuffled password
+    return (finalPass);
+  }
 
 }
