@@ -24,6 +24,10 @@ const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 // Creates function that will prompt user about password settings
 function generatePassword() {
   var passwordLength = prompt("Enter the number of characters between 8 and 128.");
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a valid number");
+    return ("undefined");
+  }
   var upperCase = confirm("Do you want to add uppercase letters to your password?");
   var lowerCase = confirm("Do you want to add lowerercase letters to your password?");
   var spChar = confirm("Do you want to add special characters to your password?");
@@ -66,12 +70,6 @@ function generatePassword() {
   shuffleArray(tempPass);
   //This takes the commas out of the array and presents the password in its final form
   let finalPass = tempPass.join("");
-
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Please enter a number between 8 and 128.");
-  } else {
-    //Finally this returns the shuffled password
-    return (finalPass);
-  }
+  return (finalPass);
 
 }
